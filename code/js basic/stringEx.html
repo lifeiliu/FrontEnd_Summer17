@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<script>
+		function replace(){
+			var original = new String(document.getElementById("original").value);
+			var searchFor = document.getElementById("searchFor").value;
+			var replaceTo = document.getElementById("replaceTo").value;
+			var regE = new RegExp(searchFor,"g");
+			var result = original.replace(regE,replaceTo);
+			document.getElementById("result").value=result;
+		}
+		
+	</script>
+<body>
+	<h3>字符串替换工具</h3>
+	<table>
+		<tr>
+			<td>原字符串</td>
+			<td><textarea id="original" cols="20" rows="5"></textarea></td>
+		</tr>
+		<tr>
+			<td>查询</td>
+			<td><input type="text" id="searchFor"></td>
+		</tr>
+		<tr>
+			<td>替换为</td>
+			<td><input type="text" id="replaceTo"></td>
+		</tr>
+		<tr>
+			<td>替换结果</td>
+			<td><textarea id="result" cols="20" rows="5"></textarea></td>
+		</tr>
+
+	</table>
+	<input type="button" value="replace" onclick="replace()">
+</body>
+</html>

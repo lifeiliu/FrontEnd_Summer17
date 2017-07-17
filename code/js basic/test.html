@@ -1,0 +1,20 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<script>
+
+function p(something){
+	document.write(something);
+	document.write("<br>");	
+}
+
+var b = new String("Hello javascript");
+p("原字符串的值为： "+b);
+
+var c = new String (b.replace("a","o"));
+p("把a替换成o以后为： "+c);
+var regS = new RegExp("a","g");
+c=b.replace(regS,"o");
+p("把所有的a替换成o以后为： "+c);
+</script>
