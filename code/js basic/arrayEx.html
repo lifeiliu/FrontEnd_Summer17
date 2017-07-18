@@ -1,0 +1,28 @@
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	function check(value,a){
+	  for(i in a){
+	    if(value==a[i])
+	       return true;
+	  }
+	  return false;
+	}
+	 
+	function removeDuplicate(a){
+	var result =new Array();
+	while(a.length!=0){
+	   var v = a.pop();
+	   console.log(v);
+	   if( !check(v,a) ){
+	     result.push(v);
+	   }
+	}
+	return result;
+	}	
+	var x = new Array(1,1,1,2,2,2);
+	var y=removeDuplicate(x);
+	p(y);
+</script>

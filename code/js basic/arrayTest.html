@@ -1,0 +1,51 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<script >
+	function p(s,v){
+		document.write(s+" "+v);
+		document.write("<br>");
+	}
+	var x = new Array();
+	p("x is a new array created by new Array():",x);
+	x = new Array(5);
+	p("x is a new array created by new Array(5):",x);
+	x = new Array(3,1,4,1,5,9,2,6);
+	p("x is a new array with initial values",x);
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	p("length of array x: "+x.length);
+	p("use for loop to print all elements of array");
+	for(i=0;i<x.length;i++){
+		p(x[i]);
+	}
+	p("use for each loop");
+	for(i in x){
+		p(x[i]);
+	}
+	var a= new String("today is a good day !")
+	var b = a.split(" ");
+	for (str in b){
+		p(b[str]);
+	}
+	var c = x.concat(b);
+	p("concat 2 arrays: "+c);
+	var d = c.join();
+	p("c.join(): "+d+" is a "+(typeof d));
+
+	x.push(5);
+	p("after x.push(5), we can get: "+x);
+	var e = x.pop();
+	p("pop a element from x, get: "+e+" x changed to: "+x);
+	p("sort array x: "+x.sort());
+	p("to get a decreased order, should reload comparator function ");
+	function comparator(v1,v2){
+		return v2-v1;
+	}
+	p("sort in decreased order: "+x.sort(comparator));
+	p("sort and remove duplicate!");
+
+</script>
