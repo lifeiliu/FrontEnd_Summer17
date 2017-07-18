@@ -1,0 +1,101 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	p("window object....")
+	p("text width: "+window.innerWidth+"hight: "+window.innerHeight);
+	p("bowser width: "+window.outerWidth+" hight: "+window.outerHeight);
+	function openNewWindow(){
+		myWindow= window.open("/");
+	}
+
+</script>
+<button onclick="openNewWindow()">open a new window</button>
+<div style="border: 1px red solid"></div>
+<script type="text/javascript">
+	p("navigator object");
+	p("<br>");
+</script>
+<table>
+	<tr>
+		<td width="30%">navigator name</td>
+		<td><script type="text/javascript">p(navigator.appName);</script></td>
+	</tr>
+	<tr>
+		<td width="30%">navigator version</td>
+		<td><script type="text/javascript">p(navigator.appVersion);</script></td>
+	</tr>
+	<tr>
+		<td width="30%">navigator innerCodeName</td>
+		<td><script type="text/javascript">p(navigator.appCodeName);</script></td>
+	</tr>
+	<tr>
+		<td width="30%">OS:</td>
+		<td><script type="text/javascript">p(navigator.platform);</script></td>
+	</tr>
+	<tr>
+		<td width="30%">Are Cookies used</td>
+		<td><script type="text/javascript">p(navigator.cookieEnabled);</script></td>
+	</tr>
+	<tr>
+		<td width="30%">Browser user Agent</td>
+		<td><script type="text/javascript">p(navigator.userAgent);</script></td>
+	</tr>
+</table>
+<div style="border: 1px red solid"></div>
+<script type="text/javascript">
+	p("screen object:");
+</script>
+<table>
+		<tr>
+		<td width="30%">User Screen Size</td>
+		<td><script type="text/javascript">p(screen.width+"*"+screen.height);</script></td>
+	</tr>
+		<tr>
+		<td width="30%">Useable area Size</td>
+		<td><script type="text/javascript">p(screen.availWidth+"*"+screen.availHeight);</script></td>
+	</tr>
+</table>
+<div style="border: 1px red solid"></div>
+<script type="text/javascript">
+	p("history object");
+	function goBack(){
+		history.back();
+	}
+	function twoTimesAgo(){
+		history.back(2);
+	}
+</script>
+<button onclick="goBack()">go Bpink Once</button>
+<button onclick="twoTimesAgo()">go Back Twice</button>
+<div style="border: 1px pink solid"></div>
+<script type="text/javascript">
+	p("all about time");
+	function printTime(){
+		var d= new Date();
+		var h = d.getHours();
+		var m = d.getMinutes();
+		var s =	d.getSeconds();
+		document.getElementById("3secShowTime").innerHTML=h+":"+m+":"+s;
+	}
+	function showTime3(){
+		setTimeout(printTime,3000);
+	}
+</script>
+<div id="3secShowTime">
+<button onclick="showTime3()">display time 3 seconds after click me </button>
+</div>
+<p>show time per second</p>
+<div id="showPerSec"></div>
+<script type="text/javascript">
+	function printTime(id){
+		var d= new Date();
+		var h = d.getHours();
+		var m = d.getMinutes();
+		var s =	d.getSeconds();
+		document.getElementById(id).innerHTML=h+":"+m+":"+s;
+	}
+	var t = setInterval(printTime("showPerSec"),1000);
+</script>
