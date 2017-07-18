@@ -1,0 +1,96 @@
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	function pd(d){
+		document.write(d.getFullYear()+ "年");
+		document.write(d.getMonth()+1+"月");
+		document.write(d.getDate()+"日");
+	}
+	function pt(d){
+		document.write(d.getHours()+":");
+		document.write(d.getMinutes()+":");
+		document.write(d.getSeconds());
+	}
+	var d = new Date();
+	p(d);
+	p(typeof (d.getFullYear()));
+	pd(d);
+	var weekDays = new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+	p("<br>today is: "+ weekDays[d.getDay()]);
+	p("<br>print time ");
+	pt(d);
+
+	function isBeforeBDay(bd){
+		var today= new Date();
+		if(today.getMonth()<bd.getMonth) return true;
+		else if(today.getMonth()==bd.getMonth){
+			if(today.getDate()<=bd.getDate())
+				return true;
+		}else
+			return false;
+	}
+	function calcuAge(bd){
+		var age;
+		var today = new Date();
+		if(isBeforeBDay(bd)){
+			age = today.getFullYear()-bd.getFullYear()-1;
+		}else
+			age=today.getFullYear()-bd.getFullYear();
+		return age;
+	}
+
+	function getAge(){
+		var birthDay= new Date();
+		var bYear= document.getElementById("year").value;
+		var bMonth=document.getElementById("Month").value;
+		var bDay= document.getElementById("day").value;
+		birthDay.setFullYear(year);
+		birthDay.setMonth(Month-1);
+		birthDay.setDate(day);
+		var age=parseInt(calcuAge(birthDay));
+		document.getElementById("age").innerHTML=age;
+	}
+// test case is good 
+	p();
+	var bd= new Date();
+	bd.setFullYear(1988);
+	bd.setMonth(2);
+	bd.setDate(5);
+	var age=calcuAge(bd);
+	p(age);	
+	p(typeof(age));
+
+</script>
+<h3><b>Please select your DOB below, we will calculate your age</b></h3>
+<select id="year">
+<script>
+	for(i=1900;i<2010;i++){
+		document.write("<option value='"+i+"'>"+i+"</option>");
+	}
+</script>>
+</select>
+Year
+<select id="Month">
+<script>
+	for(i=1;i<13;i++){
+		document.write("<option value='"+i+"'>"+i+"</option>");
+	}
+</script>>	
+</select>
+Month
+<select id="day">
+<script type="">
+	for(i=1;i<32;i++){
+		document.write("<option value='"+i+"'>"+i+"</option>");
+	}
+</script>
+</select>
+Day
+<br>
+<br>
+<input type="button" value="Cal" onclick="getAge()"
+<br>
+<br>
+your age is <span id="age">100</span>

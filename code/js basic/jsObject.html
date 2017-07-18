@@ -1,0 +1,31 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+	var hero = new Object();
+	hero.name="gareen";
+	hero.kill = function(){
+		document.write(hero.name+" is killing enermies<br>");
+	}
+
+	hero.kill();
+
+	function Hero(name){
+		this.name= name;
+		this.kill = function(){
+			document.write(this.name+" is killing enermies<br>");
+		}
+	}
+
+	var gareen = new Hero("gareen");
+	gareen.kill();
+	var teemo = new Hero("teemo");
+	
+	teemo.kill();
+
+	Hero.prototype.keng = function(){
+		document.write(this.name + "正在坑队友<br>");
+	}
+
+	teemo.keng();
+	gareen.keng();
+
+</script>
