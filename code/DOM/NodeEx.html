@@ -1,0 +1,107 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	.seperate{
+		border: 2px green solid;
+		margin-top: 15px;
+		margin-bottom: 15px
+	}
+</style>
+<h1> 1. Existed or Not? </h1>
+<p>rules: if input value start with "a" or "A", alert with existed</p>
+<input type="text" id="userName" width="50px">
+<button onclick="verify()">verify</button>
+<span id="yes" style="color: red;display: none;">This user name has existed!</span>
+<span id="no" style="color: green;display: none;">cool！ you can use this name</span>
+<script type="text/javascript">
+
+	function verify(){
+		document.getElementById("yes").style.display="none";
+		document.getElementById("no").style.display="none";
+		var input = document.getElementById("userName").value;
+		var str = new String(input);
+		if(str.charAt(0)=='a'||str.charAt(0)=='A') {
+			document.getElementById("yes").style.display="inline";
+		}else
+		document.getElementById("no").style.display="inline";
+	}
+</script>
+<div class="seperate"></div>
+<h1>2. chage picture</h1>
+<button onclick="method1()">shift pic by change src</button>
+<button onclick="method2()">shift pic by change attribute value</button>
+<br>
+<img id="img1" src="#" width="100px" height="100px" />
+<script type="text/javascript">
+	
+	function method1(){
+		var img = document.getElementById("img1");
+		img.src="gareen.jpg";
+	}
+	function method2(){
+		var img = document.getElementById("img1");
+		img.attributes["src"].value="katarina.jpg";
+	}
+</script>
+<div class="seperate"></div>
+<h1>3. zara backgrond color of a table</h1>
+<style type="text/css">
+	table{
+		border-collapse: collapse;
+		width: 90%;
+	}
+	tr{
+		border-bottom: 1px solid lightgray;
+		height: 35%;
+	}
+	td{
+		width: 25%;
+		text-align: center;
+	}
+</style>
+<table id="table1">
+	<tr id="row1">
+		<td>id</td>
+		<td>name</td>
+		<td>hp</td>
+		<td>damage</td>
+	</tr>
+	<tr id="row2">
+		<td>1</td>
+		<td>gareen</td>
+		<td>340</td>
+		<td>58</td>
+	</tr>
+	<tr id="row3">
+		<td>2</td>
+		<td>teemo</td>
+		<td>320</td>
+		<td>76</td>
+	</tr>
+	<tr id="row4">
+		<td>3</td>
+		<td>annie</td>
+		<td>380</td>
+		<td>38</td>
+	</tr>
+	<tr id="row5">
+		<td>4</td>
+		<td>deadbrother</td>
+		<td>400</td>
+		<td>90</td>
+	</tr>
+</table>
+<script>
+	var trs = document.getElementsByTagName("tr");
+	for(i=0;i<trs.length;i++){
+		if(1==i%2) 
+			trs[i].style.backgroundColor='#f8f8f8';
+	}
+
+</script>
+<!-- <script>
+var trs = document.getElementsByTagName("tr");
+for(i=0;i<trs.length;i++){
+  if(1==i%2)
+  trs[i].style.backgroundColor='#f8f8f8';
+}
+</script> -->

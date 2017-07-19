@@ -1,0 +1,84 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	.seperate{
+		border: 2px green solid;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+</style>
+<h2>Node Name  object.nodeName</h2>
+<!DOCTYPE html>
+	<div id="d1">hello HTML DOM</div>
+	<script type="text/javascript">
+		function p(s){
+			document.write(s);
+			document.write("<br>");
+		}
+		var div1= document.getElementById("d1");
+		p("document的节点名称:"+document.nodeName);
+		p("div元素节点的节点名称:"+div1.nodeName);
+		p("div下属性节点的节点名称:"+div1.attributes[0].nodeName);
+		p("div下内容节点的节点名称:"+div1.childNodes[0].nodeName);
+	</script>
+	<div class="seperate"></div>
+	</html>
+	<h2>节点值 Node Value object.nodeValue</h2>
+	<p>example</p>
+	<script type="text/javascript">
+		p("document是没有nodeValue的："+document.nodeValue);
+		p("元素节点是没有nodeValue的："+div1.nodeValue);
+		p("属性节点id的nodeValue："+div1.attributes[0].nodeValue);
+		p("内容节点的nodeValue："+div1.childNodes[0].nodeValue);
+	</script>
+	<div class="seperate"></div>
+	<h2>node Type 节点类型</h2>
+	<img src="nodetype.png" />
+	<p> example </p>
+	<script type="text/javascript">
+		p("document的节点类型是： "+ document.nodeType);
+		p("元素节点类型是： "+ div1.nodeType);
+		p("属性节点的nodeType是："+div1
+			.attributes[0].nodeType);
+		p("内容节点的nodeType是："+div1.childNodes[0].nodeType);
+	</script>
+	<div class="seperate"></div>
+	<h2>two method to change text content of an element</h2>
+	<ol>
+		<li><pre>object.childNode[0].nodeValue</pre></li>
+		<li>innerHTML</li>
+	</ol>
+	<div id="d2"> Hello HTML DOM</div>
+	<script type="text/javascript">
+		function changDiv1(){
+			document.getElementById("d2").childNodes[0].nodeValue="change this value through nodeValue";
+		}
+		function changeDiv2(){
+			document.getElementById("d2").innerHTML="change this value through innerHTML"
+		}
+	</script>
+	<button onclick="changDiv1()">change by first method </button>
+	<button onclick="changeDiv2()">change by second method</button>
+	<div class="seperate"></div>
+	<h2>Hide and display</h2>
+	<button onclick="tohide()">Hide div</button>
+	<button onclick="unhide()">display div</button>
+	<div id="hideOrNot">this is a div</div>
+	<script type="text/javascript">
+		function tohide(){
+			var div1= document.getElementById("hideOrNot");
+			div1.style.display="none";
+		}
+		function unhide(){
+			var div1= document.getElementById("hideOrNot");
+			div1.style.display="block";
+		}
+	</script>
+	<h2>change background color</h2>
+	<div id="changeColor" style="background-color: pink">Hello HTML DOM</div>
+	<button onclick="changeColor()">change color</button>
+	<script type="text/javascript">
+		function changeColor(){
+			var div = document.getElementById("changeColor");
+			div.style.backgroundColor="green";
+		}
+	</script>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html>
+<body>
+	<div id="d1">hello HTML DOM</div>
+</body>
+<style>
+	.seperate{
+		border: 2px lightgray solid 
+	}
+</style>
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	var div1= document.getElementById("d1");
+	p("document object: "+document);
+	p("div1 object: "+div1);
+	p("属性节点: "+div1.attributes[0]);
+	p("内容节点"+div1.childNodes[0]);
+</script>
+<div class= "seperate"></div>
+<h3>how to get objects</h3>
+<ul>
+	<li>getElementById </li>
+	<ul>
+		<li>id should be unique for each element</li>
+	</ul>
+	<li>getElementsByTagName</li>
+	<ul>
+		<li>a example</li>
+
+		<script type="text/javascript">
+			var divs = document.getElementsByTagName("div");
+			for(i=0;i<divs.length;i++){
+			  document.write(divs[i]);
+			  document.write("<br>");
+			}
+		</script>
+	</ul>
+	<li>getElementsByClassName</li>
+	<ul>
+		<li>based on class="className"</li>
+		<li>example:</li>
+		
+		<html>
+		<h1  class="d" >hello javascript</h1>
+		<h2  class="d" >hello BOM</h2>
+		<div  class="d" >hello DOM</div>
+		<br>
+		<script>
+		var  elements= document.getElementsByClassName("d");
+		 
+		for(i=0;i<elements.length;i++){
+		  document.write(elements[i]);
+		  document.write("<br>");
+		}
+		 
+		</script>
+		</html>
+		
+	</ul>
+	<li>getElementsByName</li>
+	<ul>
+		<li>this is used in input form, each elements has a "name "</li>
+		<li>example</li>
+		<!DOCTYPE html>
+		<html>
+		UserName: <input name="UserName"><br>
+		Password: <input  name="Password"><br>
+		<script type="text/javascript">
+			var elements= document.getElementsByName("UserName");
+			for(i=0;i<elements.length;i++){
+			  document.write(elements[i]);
+			  document.write("<br>");
+			}
+		</script>
+		</html>
+	</ul>
+	<li>null</li>
+	<ul>
+		<li>sometimes element geted is null. Maybe because it appears under that script code. at the time that script is running, that elements haven't load into memory</li>
+	</ul>
+	<li>get attributes</li>
+	<ol>
+		<li>get that element by id</li>
+		<li>then get all the attributes of that element</li>
+		<li>returns a array of attributes</li>
+		<li>if want to get a designed attribute, could use <br><pre>as["id"].nodeValue</pre></li>
+		<li>for example</li>
+		<!DOCTYPE html>
+		<html>
+		<div id="d2" align="center" class="abc">Hello HTML DOM</div>
+		<script type="text/javascript">
+			var div2 = document.getElementById("d2");
+			var attris= div2.attributes;
+			p("div1 has "+attris.length+" attributes. They are:");
+			for(i=0;i<attris.length;i++){
+				document.write(attris[i].nodeName);
+				document.write(" : ");
+				document.write(attris[i].nodeValue);
+				document.write("<br>");
+			} 
+			document.write("<br>");
+			document.write("div的id属性值是："+ attris["id"].nodeValue);
+		</script>
+		</html>
+	</ol>
+	<li>childNodes 内容</li>
+	<ol>
+		<li>get an element by id</li>
+		<li>get its childNodes array</li>
+		<li>the first elements in array childNodes[0] is 内容</li>
+		<li>nodeName and nodeValue</li>
+		<html>
+		<div id="d3" align="center" class="abc">Hello HTML DOM</div>
+		<script type="text/javascript">
+			var div2 = document.getElementById("d3");
+			var content = div2.childNodes[0];
+			document.write("div的内容节点名是:"+content.nodeName);
+			document.write("<br>");
+			document.write("div的内容节点值是:"+content.nodeValue);
+			 
+		</script>
+		</html>
+	</ol>
+
+</ul>
+
+
+</html>
+
+
