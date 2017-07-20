@@ -1,26 +1,28 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <script type="text/javascript">
 	function p(s){
 		document.write(s);
 		document.write("<br>");
 	}
-	function pd(d){
-		document.write(d.getFullYear()+ "年");
-		document.write(d.getMonth()+1+"月");
-		document.write(d.getDate()+"日");
-	}
-	function pt(d){
-		document.write(d.getHours()+":");
-		document.write(d.getMinutes()+":");
-		document.write(d.getSeconds());
-	}
-	var d = new Date();
-	p(d);
-	p(typeof (d.getFullYear()));
-	pd(d);
-	var weekDays = new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
-	p("<br>today is: "+ weekDays[d.getDay()]);
-	p("<br>print time ");
-	pt(d);
+	// function pd(d){
+	// 	document.write(d.getFullYear()+ "年");
+	// 	document.write(d.getMonth()+1+"月");
+	// 	document.write(d.getDate()+"日");
+	// }
+	// function pt(d){
+	// 	document.write(d.getHours()+":");
+	// 	document.write(d.getMinutes()+":");
+	// 	// document.write(d.getSeconds());
+	// }
+	// var d = new Date();
+	// p(d);
+	// p(typeof (d.getFullYear()));
+	// pd(d);
+	// var weekDays = new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+	// p("<br>today is: "+ weekDays[d.getDay()]);
+	// p("<br>print time ");
+	// pt(d);
 
 	function isBeforeBDay(bd){
 		var today= new Date();

@@ -1,0 +1,119 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	.seperate{
+		border: 2px green solid;
+		margin-top: 15px;
+		margin-bottom: 15px
+	}
+</style>
+<h1>1. focus</h1>
+<input type="text" id="input1" onfocus="on()" onblur="off()" placeholder="input1">
+<br>
+<br>
+<input type="text" id="input2" placeholder="input2">
+<br>
+<br>
+<div id="message"></div>
+<script type="text/javascript">
+	function on(){
+		var message = document.getElementById("message");
+	
+		message.innerHTML="input1 get focus";
+	}
+	function off(){
+		var message = document.getElementById("message");
+		message.innerHTML="input1 lost forus"};
+</script> 
+
+<div class="seperate"></div>
+<h1>2. mouse actions</h1>
+<input type="button" onmousedown="down()" onmouseup="up()" value="Demo mouse down and up">
+<br>
+<br>
+<input type="button"  onmousemove="move()" value="Demo mouse move">
+<br>
+<br>
+<input type="button" value="Demo mouse over" onmouseover="over()">
+<br>
+<br>
+<input type="button" value="Demo mouse out" onmouseout="out()">
+<br>
+<br>
+<div id="mouseDemoMSG"></div>
+<script type="text/javascript">
+	var MSG = document.getElementById("mouseDemoMSG");
+	var number=0;
+	function down(){
+		MSG.innerHTML= "mouse pressed down!";
+	}
+	function up(){
+		MSG.innerHTML="mouse pressed up!";
+	}
+	function move(){
+		MSG.innerHTML="mouse move here "+(++number)+"times";
+	}
+	function over(){
+		MSG.innerHTML="mouse over here "+(++number)+"times";
+	}
+	function out(){
+		MSG.innerHTML="mouse out here "+(++number)+"times";
+	}
+</script>
+<div class="seperate"></div>
+<h1>3. KeyBoard Actions</h1>
+<p >need to click the button before show keyborad actions</p>
+<input type="button" onkeydown="down(event)" value="show keydown">
+<br>
+<br>
+<input type="button" value="show keypress" onkeypress="press(event)">
+<br>
+<br>
+<input type="button" value="show key up" onkeyup="up()">
+<br>
+<br>
+<div id="keybordMSG"></div>
+<script type="text/javascript">
+	var MSG= document.getElementById("keybordMSG");
+	function down(e){
+		var text = "you pressed "+ e.keyCode;
+		if(e.shiftKey==1)
+			text+="and shiftKey";
+		MSG.innerHTML=text;
+	}
+	function press(e){
+		var text ="you pressed"+e.keyCode;
+		if(e.shiftKey==1)
+			text+="and shiftKey";
+		MSG.innerHTML=text;
+	}
+	function up(){
+		MSG.innerHTML="up keyborad";
+	}
+
+</script>
+<div class="seperate"></div>
+<h1>4. change action</h1>
+<input type="text" id="changeText" onchange="inputChange()">
+<input type="button" value="change">
+<br>
+<br>
+<div id="inputChange"></div>
+<script type="text/javascript">
+function inputChange(){
+	var msg = document.getElementById("inputChange");
+	var inputValue = document.getElementById("changeText").value;
+	msg.innerHTML= "your input changed to "+inputValue;
+}
+	
+</script>
+<div class="seperate"></div>
+<h1>5. this</h1>
+<input type="button" value="button1" onclick="singleClick(this)">
+<input type="button" value="button2" onclick="singleClick(this)">
+<br><br>
+<div id="thisButton"></div>
+<script type="text/javascript">
+	function singleClick(button){
+		document.getElementById("thisButton").innerHTML="you clicked is "+button.value;
+	}
+</script>
