@@ -1,0 +1,59 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	.seperate{
+		border: 2px green solid;
+		margin-top: 15px;
+		margin-bottom: 15px
+	}
+</style>
+<h1>1. delete element node</h1>
+<ol>
+	<li> get parent node</li>
+	<li>delete child from parent node by <b>removeChild</b></li>
+</ol>
+<div id="d1">safe div</div>
+<div id="d2">div to be deleted</div>
+<button onclick="del()">delete div2</button>
+<script type="text/javascript">
+	function del(){
+		var toDel = document.getElementById("d2");
+	var parent = toDel.parentNode;
+	parent.removeChild(toDel);
+	}
+	
+</script>
+<div class= "seperate"></div>
+<h1>2. remove attribute</h1>
+<ol>
+	<li> get node that have attribute to remove</li>
+	<li>that node call <b>removeAttribute</b></li>
+</ol>
+<a id="link" href="http://www.baidu.com">百度一下</a>
+<button onclick="delAttr()">删除超链</button>
+<script type="text/javascript">
+	function delAttr(){
+		var link= document.getElementById("link");
+		link.removeAttribute("href");
+	}
+	
+</script>
+<div class="seperate"></div>
+<h1>3. remove text of a node</h1>
+<ol>
+	<li> removeChild(node.childNode[0])</li>
+	<li>set node.innerHTML=""</li>
+</ol>
+<div id="d3">删除我吧</div>
+<button onclick="delText1()">delete by removeChild</button>
+<button onclick="delText2()">delete by innerHTML</button>
+<script type="text/javascript">
+	var div3= document.getElementById("d3");
+	function delText1(){
+		
+		div3.removeChild(div3.childNodes[0]);
+	}
+	function delText2(){
+		div3.innerHTML="";
+	}
+
+</script>

@@ -1,0 +1,92 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	.seperate{
+		border: 2px green solid;
+		margin-top: 15px;
+		margin-bottom: 15px
+	}
+</style>
+<h1>1. parent node   [node.parentNode]</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	var node=null;
+	function getParent(){
+		while (node!=document){
+			if(node==null) node=document.getElementById("1");
+			else {
+				alert(node.parentNode);
+				node=node.parentNode;
+			}
+		}
+		alert("reach the root: document!");
+	}	
+</script>
+</head>
+<body>
+<div id="parent">
+	<div id="1">first Node</div>
+	<div id="2">second Node</div>
+	<div id="3">third Node</div>
+</div>
+<button onclick="getParent()">get Parent</button>
+</body>
+</html>
+<div class="seperate"></div>
+<h1>siblings</h1>
+<pre>node.previousSibling node.nextSibling
+注意 d1和d2标签是紧挨着的，所以d2前一个节点时d1。
+通过nextSibling 获取后一个节点#text.
+注意 d2和d3不是紧挨着 标签之间有任何字符、空白、换行都会产生文本元素。 所以获取到的节点是#text.</pre>
+<script>
+
+function showPre(){
+    var d2 = document.getElementById("d2");
+    alert(d2.previousSibling.innerHTML);
+}
+
+function showNext(){
+    var d2 = document.getElementById("d2");
+    alert(d2.nextSibling.nodeName);
+}
+</script>
+ 
+<div id="parentDiv">
+   父Div的内容
+ <div id="d1">第一个div</div><div id="d2">第二个div</div>
+<div id="d3">第三个div</div>
+</div>
+ 
+<button onclick="showPre()">获取d2的前一个同胞</button>
+
+<button onclick="showNext()">获取d2的后一个同胞</button>
+<div class="seperate"></div>
+<div id="fooDiv">
+   父Div的内容
+ <div id="div1">第一个div</div>
+ <div id="div2">第二个div</div>
+ <div id="div3">第三个div</div></div>
+ 
+<button onclick="showfirst()">第一个子节点</button>
+<button onclick="showlast()">最后一个子节点</button>
+<button onclick="getNo()">所有子节点数量 get from childNodes</button>
+<button onclick="getNo2()">所有子节点数量 get from children</button>
+<br>
+<b>childNodes 会包含文本节点 
+children 会排除文本节点 </b>
+<script type="text/javascript">
+	var foo=document.getElementById("fooDiv");
+	function showfirst(){
+		alert(foo.firstChild.nodeName);
+	}
+	function showlast(){
+		alert(foo.lastChild.nodeName);
+	}
+	function getNo(){
+		alert(foo.childNodes.length);
+	}
+	function getNo2(){
+		alert(foo.children.length);
+	}
+</script>
