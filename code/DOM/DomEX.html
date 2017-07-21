@@ -10,21 +10,21 @@
 <table width="100%" border = "1" cellspacing="0" id="heroTable">
  
 <tr >
-   <td width="50%">英雄名称</td>
+   <td width="50%">Hero Name</td>
    <td>
-       操作
+       Operation
    </td>
 </tr>
  
 <tr >
-   <td>盖伦</td>
+   <td>gareen</td>
    <td>
       <a href="#" onclick="deleteRow(this)">删除</a>     
     </td>
 </tr>
  
 <tr >
-   <td>提莫</td>
+   <td>teemo</td>
    <td>
       <a href="#" onclick="deleteRow(this)">删除</a>     
     </td>
@@ -51,4 +51,41 @@
 	}
 </script>
 <div class="seperate"></div>
-<h1>2. </h1>
+<h1>2. verify if input text is not null</h1>
+
+	UserName: <input type="text" id="user"><br>
+	Password: <input type="password" id="pass"><br>
+	<input type="button" value="login" onclick="login()">
+
+<script type="text/javascript">
+	function login(){
+		if(document.getElementById("user").value.length==0||document.getElementById("pass").value.length==0)
+			alert("UserName or Password can not be null");
+	}
+</script>
+<h2>2.1 verify text length of input text </h2>
+<h2>2.2 text has to be a number</h2>
+<h2>2.3 email format</h2>
+UserName: <input type="text" id="user2"><br>
+age: <input type="text" id="age"><br>
+email:<input type="text" id="email"><br>
+<button onclick="signup()">signup</button>
+<script type="text/javascript">
+	function signup(){
+		var UserName=document.getElementById("user2").value;
+		var age = document.getElementById("age").value;
+		var email = document.getElementById("email").value;
+		var Regex =/^(?:\w+\.?)*\w+@(?:\w+\.)*\w+$/;
+		if(UserName.length<3)
+			alert("UserName has to be at least 3 digits/letters!");
+		else if (age.length==0)
+			alert("age can not be blank");
+		else if(parseInt(age)!=age)
+			alert("age has to be an int !");
+		else if (!Regex.test(email))
+			alert("email format error!");
+		else
+			alert("success!");
+
+	}
+</script>
