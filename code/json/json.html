@@ -1,0 +1,34 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h1>hello json</h1>
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	var gareen ={"name":"gareen","hp":616};
+	p("this is a jason object: "+gareen);
+	p("name of hero:"+gareen.name);
+	p("hp of hero: "+gareen.hp);
+
+</script>
+<h2>json array</h2>
+<script type="text/javascript">
+	var heros =[
+		{"name":"gareen","hp":616},
+		{"name":"teemo","hp":616},
+		{"name":"deadBro","hp":616},
+		{"name":"fireWoman","hp":616},
+	]
+	p("size of array"+heros.length);
+	p("the fourth member of array is: "+heros[3].name);
+</script>
+<h1>string to json</h1>
+
+<script type="text/javascript">
+	var s1="{\"name\":\"gareen\"";
+	var s2= ",\"hp\":616}";
+	var s3=s1+s2;
+	p("this is a string: "+s3);
+	var gareen = eval("("+s3+")");
+	p("this is a jason: "+gareen);
+</script>

@@ -1,0 +1,21 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<span>input userName: </span>
+<input type="text" id="name" onkeyup="check()">
+<span id="checkResult"></span>
+
+<script type="text/javascript">
+	var xmlhttp;
+	function check(){
+		var name = document.getElementById("name").value;
+		var url = "http://how2j.cn/study/checkName.jsp?name="+name;
+
+		xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange=checkResult;
+		xmlhttp.open("GET",url,true);
+		xmlhttp.send(null);
+	}
+	function checkResult(){
+		if(xmlhttp.readyState==4&&xmlhttp.status==200)
+			document.getElementById("checkResult").innerHTML=xmlhttp.responseText;
+	}
+</script>

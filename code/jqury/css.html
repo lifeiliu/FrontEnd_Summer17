@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="jquery.min.js"></script>
+<style type="text/css">
+	.pink{
+		background-color: pink;
+	}
+</style>
+<button id="b1">add pink background</button>
+<button id="b2">cancle background</button>
+<button id="b3">toggle background</button>
+<button id="b4">single css change</button>
+<button id="b5">multi css change</button>
+<br>
+<br>
+<div id="d1"> Hello Jquery</div>
+
+<script type="text/javascript">
+	$(function(){
+		$("#b1").click(function(){
+			$("#d1").addClass("pink");
+		});
+		$("#b2").click(function(){
+			$("#d1").removeClass("pink");
+		})
+		$("#b3").click(function(){
+			$("#d1").toggleClass("pink");
+		})
+		$("#b4").click(function(){
+			$("#d1").css({"background-color":"pink"});
+		})
+		$("#b5").click(function(){
+			$("#d1").css({"background-color":"pink","color":"green"});
+		})
+	});
+</script>

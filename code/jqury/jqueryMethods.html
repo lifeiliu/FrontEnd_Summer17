@@ -1,0 +1,25 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#b1").click(function(){
+			alert($("#text1").val());
+		})
+		$("#b2").click(function(){
+			alert($("#div1").html());
+		})
+		$("#b3").click(function(){
+			alert($("#div1").text());
+		})
+	});
+</script>
+<button id="b1">get Value</button>
+<button id="b2">get text from html method</button>
+<button id="b3">get text from text()</button>
+<br>
+<br>
+<input type="text" id="text1" >
+<div id="div1">
+	this is div
+	<span id= "span1"> this is span in div</span>
+</div>
