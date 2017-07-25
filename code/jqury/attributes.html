@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="jquery.min.js"></script>
+<h1>get attributes--->attr()</h1>
+<h2>using attr(attr,value) to change attribute value</h2>
+<h2>using removeAttr(attr) to delete an attribute</h2>
+<h1>differences between <b>prop</b> and <b>attr</b> </h1>
+<h2> <b>prop</b> also can be used to get and change attributes.
+	the differences are when it is used on customized attris or checkbox</h2>
+
+
+<button id="b1">get align</button>
+<button id="b2">get customized attri</button>
+<button id="b3">change align to right</button>
+<button id="b4">delete align</button>
+<br>
+<br>
+<h1 id="h1" align="center" game="lol">center header</h1>
+<script type="text/javascript">
+	$(function(){
+		$("#b1").click(function(){
+			alert("align is: "+$("#h1").attr("align"));
+		});
+		$("#b2").click(function(){
+			alert("customized attributes value is: "+$("#h1").attr("game"));
+		})
+		$("#b3").click(function(){
+			$("#h1").attr("align","right");
+		})
+		$("#b4").click(function(){
+			$("h1").removeAttr("align");
+		})
+	})
+</script>

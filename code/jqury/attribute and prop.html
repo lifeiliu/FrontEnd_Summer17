@@ -1,0 +1,39 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="jquery.min.js"></script>
+
+<h1>differences between <b>prop</b> and <b>attr</b> </h1>
+<h2> <b>prop</b> also can be used to get and change attributes.
+	the differences are when it is used on customized attris or checkbox
+	prop can not get customized attri value. and it returns "true/false" when it 
+	applied to checkbox; attr() seems could not get unchecked value of checkbox</h2>
+<style>
+button{
+  display:block;
+}
+</style>
+<button id="b1">通过attr获取自定义属性 game</button>
+<button id="b2">通过prop获取自定义属性 game</button>
+<button id="b3">通过attr获取 checked属性</button>
+<button id="b4">通过prop获取 checked属性</button>
+  
+<br>
+<br>
+  
+<input type="checkbox"  id="c" game="LOL" checked=""> 选中的复选框
+
+<script type="text/javascript">
+	$(function(){
+		$("#b1").click(function(){
+			alert("通过attr获取自定义属性 game: "+$("#c").attr("game"));
+		})
+		$("#b2").click(function(){
+			alert("通过prop获取自定义属性 game: "+$("#c").prop("game"));
+		})
+		$("#b3").click(function(){
+			alert("通过attr获取 checked属性: "+$("#c").attr("checked"));
+		})
+		$("#b4").click(function(){
+			alert("通过prop获取checked属性: "+$("#c").prop("checked"));
+		})
+	});
+</script>
