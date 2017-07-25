@@ -1,0 +1,126 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="jquery.min.js"></script>
+<h1>selector: form elements</h1>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="jquery.min.js"></script>
+
+<style >
+	table {
+		border-collapse: collapse;
+		table-layout: fixed;
+		width: 80%;
+
+	}
+	table td{
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 5px;
+		padding-top: 5px;
+	}
+	div button{
+		display: block;
+	}
+	.gray{
+		background-color: lightgray;
+	}
+</style>
+
+<script type="text/javascript">
+	$(function(){
+		$(".b").click(function(){
+			var value = $(this).val();
+			$("td[rowspan!=13] "+value).toggle(200);
+		})
+		$("#b1").click(function(){
+			$("tr:odd").toggleClass("gray");
+		})
+	});
+</script>
+<table>
+	<tr>
+		
+		<td rowspan="13" valign="top" width="150px">
+			<div>
+				<button value=":input" class="b">toggle all :input</button>
+				<button value=":button" class="b">toggle all :button</button>
+				<button value=":radio" class="b">toggle all :radio</button>
+				<button value=":checkbox" class="b">toggle all :checkbox</button>
+				<button value=":text" class="b">toggle all :text</button>
+				<button value=":password" class="b">toggle all :password</button>
+				<button value=":file" class="b">toggle all :file</button>
+				<button value=":submit" class="b">toggle all :submit</button>
+				<button value=":image" class="b">toggle all :image</button>
+				<button value=":reset" class="b">toggle all :reset</button>
+				
+			</div>
+		</td>
+		<td width="120px">name</td>
+		<td width="120px">form element</td>
+		<td>example</td>
+	</tr>
+	<tr>
+		<td>input button</td>
+		<td>:button</td>
+		<td><input type="button" value="input button"></td>
+	</tr>
+	<tr>
+		<td>button</td>
+		<td>：button</td>
+		<td><button>Button</button></td>
+	</tr>
+	<tr>
+		<td>raido</td>
+		<td>:radio</td>
+		<td><input type="radio">
+		</td>
+	</tr>
+	<tr>
+		<td>checkbox</td>
+		<td>:checkbox</td>
+		<td><input type="checkbox" ></td>
+	</tr>
+	<tr>
+		<td>text</td>
+		<td>:text</td>
+		<td><input type="text" name=""></td>
+	</tr>
+	<tr>
+		<td> text area</td>
+		<td> </td>
+		<td><textarea></textarea></td>
+		<tr>
+		  <td>密码框</td>
+		  <td >:password</td>
+		  <td><input type="password" /></td>
+		</tr>
+		<tr>
+		  <td>下拉框</td>
+		  <td ></td>
+		  <td><select><option>Option</option></select></td>
+		</tr>
+		 
+		<tr>
+		  <td>文件上传</td>
+		  <td >:file</td>
+		  <td> <input type="file" /></td>
+		</tr>
+		 
+		<tr>
+		  <td>提交按钮</td>
+		  <td >:submit</td>
+		  <td><input type="submit" /></td>
+		</tr>
+		<tr>
+		  <td>图片型提交按钮</td>
+		  <td >:image</td>
+		  <td><input type="image" src="http://how2j.cn/example.gif" /></td>
+		</tr>
+		 
+		<tr>
+		  <td>重置按钮</td>
+		  <td >:reset</td>
+		  <td><input type="reset" /></td>
+		</tr>
+			</tr>
+</table>
+<button id="b1">斑马背景</button>

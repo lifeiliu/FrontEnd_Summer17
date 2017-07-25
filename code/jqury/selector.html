@@ -1,2 +1,60 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script src="jquery.min.js"></script>
+<h1>1. $("tagName")--> all elements of this tag</h1>
+<h1>2. select by id---> $("#id")</h1>
+<h1>3. select by class--->$(".className")</h1>]
+<h1>$("selector1 selector2") </h1>
+<h1>4. $(selector:first(or last))</h1>
+<h1>5. selector:odd/even </h1>
+<h1>6. selector: hidden/visible--->hidden and visible</h1>
+<h1>7. attribute</h1>
+<style type="text/css">
+	.pink{
+		background-color: pink;
+	}
+</style>
+<button id ="b1" class="d">change all div backgrond</button>
+<button id= "b2" class="d"> add pink to the d2 div</button>
+<button id="b3">pink class d</button>
+<button id="b4">pink the span under div3</button>
+<button id="b5">first div pink</button>
+<button id="b6">last div pink</button>
+<button id="b7">pink odd divs</button>
+<button id="b8">hide divs</button>
+
+<div id="d1">this is 0 div ..</div>
+<div id="d2">this is 1 div ..</div>
+<div id="d3"><span>this is span in 2 div ..</span> <br>out span</div>
+<div>this is 3 div</div>
+<script type="text/javascript">
+	$(function(){
+		// $("#b1").click(function(){
+		// 	$("div").addClass("pink");
+		// })
+		$("#b2").click(function(){
+			$("#d2").addClass("pink");
+		})
+		$("#b3").click(function(){
+			$(".d").addClass("pink");
+		})
+		$("#b4").click(function(){
+			$("#d3 span").addClass("pink");
+		})
+		$("#b5").click(function(){
+			$("div:first").addClass("pink");
+		})
+		$("#b6").click(function(){
+			$("div:last").addClass("pink");
+		})
+		$("#b7").click(function(){
+			$("div:odd").addClass("pink");
+		})
+		$("#b8").click(function(){
+			$("div:visible").hide();
+		})
+		$("#b1").click(function(){
+			$("div:hidden").show();
+		})
+		
+	});
+</script>

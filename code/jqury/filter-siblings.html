@@ -1,0 +1,39 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="jquery.min.js"></script>
+<h1>siblings()</h1>
+
+<button id="b1">border to siblings</button>
+<div id="parent">
+	parent div
+	<div id="current">current div</div>
+	<div class="sibling" >sibling1</div>
+	<div class="sibling">sibling 2</div>
+</div>
+
+<style type="text/css">
+	div#parent{
+		background-color: green;
+		padding: 5px;
+	}
+	div#current{
+		background-color: red;
+	}
+	div.sibling{
+		background-color: pink;
+	}
+	.b{
+		border: 2px black solid;
+	}
+	.margin{
+		margin: 10px;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		$("#b1").click(function(){
+			$("#current").siblings().toggleClass("b");
+			$("div[id!=parent]").addClass("margin");
+		})
+
+	});
+</script>

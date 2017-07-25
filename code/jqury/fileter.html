@@ -1,0 +1,100 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="jquery.min.js"></script>
+<h1>first() last() eq(num)---->first last numth</h1>
+<div>hello jquery 0</div>
+<div>hello jquery 1</div>
+<div>hello jquery 2</div>
+<div>hello jquery 3</div>
+<div>hello jquery 4</div>
+<div>hello jquery 5</div>
+<button id="b1">pink 1st</button>
+<button id="b2">pink last</button>
+<button id="b3">pink 5th </button>
+<script type="text/javascript">
+	$(function(){
+		$("#b1").click(function(){
+			$("div").first().addClass("pink");
+		})
+		$("#b2").click(function(){
+			$("div").last().addClass("pink");
+		})
+		$("#b3").click(function(){
+			$("div").eq(4).addClass("pink");
+		})
+		$("#b4").click(function(){
+			$("#current").parent().toggleClass("b");
+		})
+		$("#b5").click(function(){
+			$("#current").parents().toggleClass("b");
+		})
+	})
+</script>
+<style type="text/css">
+	.pink{
+		background-color: pink;
+	}
+	div {
+		padding: 20px;
+	}
+	div#grandpa{
+		background-color: orange;
+	}
+	div#dad{
+		background-color: green;
+	}
+	div#current{
+		background-color: red
+	}
+	.b{
+		border: 2px solid black;
+	}
+</style>
+<h2> parent() and parents()
+</h2>
+<div id="grandpa">grandparent
+	<div id="dad">
+		parent Div
+		<div id= "current">
+			current div
+		</div>
+	</div>
+</div>
+<button id="b4">change parent</button>
+<button id="b5"> change parents</button>
+<h1>children()and find(selector)</h1>
+<style type="text/css">
+	div{
+		padding: 5px;
+	}
+	div #current{
+		background-color: red
+	}
+	div.children{
+		background-color: green;
+		margin: 10px;
+	}
+	div.grandChildren{
+		background-color: pink;
+	}
+</style>
+<button id="b6">change children's borders</button>
+<button id="b7">change springs's borders</button>
+
+<div id="current">current element
+	<div class="children">child 1
+	 	<div class="grandChildren">grand son1</div>
+	</div>
+	<div class="children">child 2
+	 	<div class="grandChildren">grand son1</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$("#b6").click(function(){
+			$("#current").children().toggleClass("b");
+		})
+		$("#b7").click(function(){
+			$("#current").find("div").toggleClass("b");
+		})
+	});
+</script>
