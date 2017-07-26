@@ -1,0 +1,116 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="jquery.min.js"></script>
+<style type="text/css">
+	.seperate{
+		border: 2px green solid;
+		margin-top: 15px;
+		margin-bottom: 15px
+	}
+</style>
+
+<h1>load</h1>
+<h2><ol>
+	<li>$(document).ready() load pages</li>
+	<li>$() load pages most common</li>
+	<li>load() used to load picture</li>
+	</ol></h2>
+
+<div id="message1"></div>
+<div id="message2"></div>
+
+<img id="img" src="http://how2j.cn/example.gif"/>
+
+<script type="text/javascript">
+	$(function(){
+		$(document).ready(function(){
+			$("#message1").html("page loaded!");
+		})
+		$("#img").load(function(){
+			$("#message2").html("img loaded!");
+		})
+	})
+</script>
+<div class="seperate"></div>
+<h1>keyboard</h1>
+<style type="text/css">
+	tr#action div{
+		border: 1px solid black;
+		height: 50px;
+		background-color: red;
+	}
+	tr#num div,tr#value div{
+		height: 50px;
+		background-color: #d1d1d1;
+	}
+	td {
+		width: 25%
+	}
+</style>
+input <input type="text" id="i">
+<table width="100%">
+	<tr>
+		<td></td>
+		<td>keydown</td>
+		<td>keypress</td>
+		<td>keyup</td>
+	</tr>
+	<tr id="action">
+		<td>behavior</td>
+		<td><div id="keydownAction"></div></td>
+		<td><div id="keypressAction"></div></td>
+		<td><div id="keyupAction"></div></td>
+	</tr>
+	<tr id="num">
+		<td>keyborad code</td>
+		<td><div id="keydownNum"></div></td>
+		<td><div id="keypressNum"></div></td>
+		<td><div id="keyupNum"></div></td>
+	</tr>
+	<tr id="value">
+		<td>value</td>
+		<td><div id="keydownValue"></div></td>
+		<td><div id="keypressValue"></div></td>
+		<td><div id="keyupValue"></div></td>
+	</tr>
+</table>
+<script type="text/javascript">
+	var order=0;
+	var clearTimer=null;
+	function action(selector){
+		$("#"+selector+"Action").css("background-color","green");
+		$("#"+selector+"Action").html("order: "+(++order));
+	}
+	function value(selector,value){
+		$("#"+selector+"Value").html(value);
+	}
+	function key(selector,e){
+		$("#"+selector+"Num").html(e.which);
+	}
+	function clear(){
+		order=0;
+		$("tr#action div").css("background-color","red");
+		$("tr div").html("");
+	}
+	function show(selector,e,inputvalue){
+		clearTimeout(clearTimer);
+		action(selector);
+		value(selector,inputvalue);
+		key(selector,e);
+		clearTimer=setTimeout(clear,4000);
+	}
+	$(function(){
+		$("#i").keydown(function(e){
+			var selector = "keydown";
+			show(selector,e,$(this).val());
+		})
+		$("#i").keypress(function(e){
+			var selector="keypress";
+			show(selector,e,$(this).val());
+		})
+		$("#i").keyup(function(e){
+			var selector ="keyup";
+			show(selector,e,$(this).val());
+		})
+	});
+
+</script>
