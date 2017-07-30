@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="js/jquery/2.0.0/jquery.min.js"></script>
+<link href="css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+<script src="js/bootstrap/3.3.6/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+	body{
+		font-size: 12px;
+		font-family: Arial;
+	}
+	a{
+		color:#999;
+	}
+	a:hover{
+		color: #C40000;
+		text-decoration: none;
+	}
+	div#divSimpleSearch{
+		height: 40px;
+		width: 400px;
+		background-color: #C40000;
+		margin-top:15px;
+		margin-right: 10px;
+		padding:0px 1px 1px 1px;
+	}
+	div#divSimpleSearch input{
+		height: 34px;
+		width: 310px;
+		border:1px solid transparent;
+		margin: 0px 0px 1px 1px; 
+	}
+	div#divSimpleSearch button{
+		height: 34px;
+		width: 80px;
+		background-color: #C40000;
+		color: white;
+		font-size: 20px;
+		font-weight: bold;
+		border:1px solid transparent;
+	}
+	div.searchBottom{
+		margin-top: 3px;
+		margin-left:-15px;
+	}
+	div.searchBottom span{
+		margin: 10px;
+		color:#999;
+	}
+	div.searchBottom a{
+		font-size: 14px;
+		padding: 0px 25px 0px 10px;
+	}
+	img.simpleLogo{
+		position: absolute;
+		margin-top:30px; 
+		margin-left:10px;
+	}
+</style>
+<div >
+	<a href="#"><img src="img/site/simpleLogo.png" class="simpleLogo"></a>
+	<div id="divSimpleSearch" class="pull-right">
+		<input type="text" id="search" placeholder="平衡车 原汁机">
+		<button id="searchButton" type="submit">Search</button>
+		<div class="searchBottom">
+			<span> <a href="#">冰箱</a><span>|</span> </span>
+			<span> <a href="#">空调</a><span>|</span> </span>
+			<span> <a href="#">沙发</a><span>|</span> </span>
+			<span> <a href="#">餐桌</a> </span>
+		</div>
+	</div>
+</div>
